@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Student Exchange System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#"><img src="pictures/logo.png" alt="Logo"></a>
+        </div>
+    </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" style="background-image: url('img/hero.jpg');">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>Explore Student Exchange Opportunities</h1>
+        <p>Study in top universities across multiple regions and expand your experience.</p>
+        <br><br>
+        <a href="map-finder.html" class="btn hero-btn">Start Exploring</a>
+    </div>
+</section>
+
+<!-- ================= ROLE SELECTION ================= -->
+<section class="explore">
+    <h2>Find Your Exchange Program</h2>
+
+    <section class="role-selection">
+        <h3>Select Your Role</h3>
+        <div class="role-options">
+            <label class="role-option">
+                <input type="radio" name="userRole" value="student" checked>
+                <span>Student</span>
+            </label>
+            <label class="role-option">
+                <input type="radio" name="userRole" value="coordinator">
+                <span>Coordinator</span>
+            </label>
+            <label class="role-option">
+                <input type="radio" name="userRole" value="admin">
+                <span>Admin</span>
+            </label>
+        </div>
+    </section>
+</section>
+
+<!-- ================= AUTH SECTION ================= -->
+<section class="auth-section" id="authSection" style="display:none;">
+    <div class="auth-container">
+
+        <!-- LOGIN -->
+        <div class="auth-box login-box" id="loginBox">
+            <h2>Log In</h2>
+            <form class="auth-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn auth-btn">Log In</button>
+
+                <!-- Student-only signup link -->
+                <p class="auth-switch" id="signupLink" style="display:none;">
+                    Don't have an account?
+                    <a href="#" onclick="showSignup(event)">Sign Up</a>
+                </p>
+            </form>
+        </div>
+
+        <!-- SIGN UP (STUDENT ONLY) -->
+        <div class="auth-box signup-box hidden" id="signupBox">
+            <h2>Sign Up</h2>
+            <form class="auth-form" onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Create a password" required>
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit" class="btn auth-btn">Sign Up</button>
+
+                <p class="auth-switch">
+                    Already have an account?
+                    <a href="#" onclick="showLogin(event)">Log In</a>
+                </p>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-column">
+            <h3>EYR</h3>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Community</h3>
+            <a href="#">Member Institutions</a>
+            <a href="#">Council</a>
+            <a href="#">Staff</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Involvement</h3>
+            <a href="#">Membership</a>
+            <a href="#">Donate</a>
+            <a href="#">Conference</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Connect</h3>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <p class="footer-contact">515.450.5529</p>
+            <p class="footer-contact">info@eyr.org</p>
+        </div>
+
+    </div>
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+// Get selected role
+function getSelectedRole() {
+    return document.querySelector('input[name="userRole"]:checked').value;
+}
+
+// Show auth section based on role
+function showAuthSection() {
+    const role = getSelectedRole();
+    const authSection = document.getElementById('authSection');
+    const signupLink = document.getElementById('signupLink');
+    const signupBox = document.getElementById('signupBox');
+
+    authSection.style.display = 'block';
+
+    if (role === 'student') {
+        signupLink.style.display = 'block';
+    } else {
+        signupLink.style.display = 'none';
+        signupBox.classList.add('hidden');
+    }
+
+    showLogin();
+}
+
+// Show login form
+function showLogin(event) {
+    if (event) event.preventDefault();
+    document.getElementById('loginBox').classList.remove('hidden');
+    document.getElementById('signupBox').classList.add('hidden');
+}
+
+// Show signup form (student only)
+function showSignup(event) {
+    if (event) event.preventDefault();
+    if (getSelectedRole() !== 'student') {
+        alert('Sign up is only available for students.');
+        return;
+    }
+    document.getElementById('loginBox').classList.add('hidden');
+    document.getElementById('signupBox').classList.remove('hidden');
+}
+
+// Handle login
+function handleLogin(event) {
+    event.preventDefault();
+    const role = getSelectedRole();
+    if (role === 'coordinator') {
+        window.location.href = 'coordinator.html';
+    } else if (role === 'admin') {
+        window.location.href = 'admin.html';
+    } else {
+        window.location.href = 'index.html';
+    }
+}
+
+// Handle signup
+function handleSignup(event) {
+    event.preventDefault();
+    window.location.href = 'index.html';
+}
+
+// Listen for role change
+document.querySelectorAll('input[name="userRole"]').forEach(radio => {
+    radio.addEventListener('change', showAuthSection);
+});
+
+// Show auth section on page load
+showAuthSection();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Exchange Universities Map</title>
+
+  <!-- Load Leaflet map library CSS for styling -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+  <!-- Page Title -->
+  <h2>Exchange Universities Map</h2>
+
+  <!-- Search Bar its to Users can search for universities by name -->
+  <input type="text" id="uniSearchBar" placeholder="Search for a university...">
+
+  <!-- Continent Buttons its to Quick navigation to zoom into different world regions -->
+  <div id="continentButtons">
+    <button class="continent-btn" onclick="zoomTo('world')">World</button>
+    <button class="continent-btn" onclick="zoomTo('europe')">Europe</button>
+    <button class="continent-btn" onclick="zoomTo('asia')">Asia</button>
+    <button class="continent-btn" onclick="zoomTo('africa')">Africa</button>
+    <button class="continent-btn" onclick="zoomTo('na')">North America</button>
+    <button class="continent-btn" onclick="zoomTo('sa')">South America</button>
+  </div>
+
+  <!-- Interactive Map Container -->
+  <div id="map"></div>
+
+  <!-- Load Leaflet map JavaScript library -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+  <!-- external JavaScript file with all map functionality -->
+  <script src="map-finder.js"></script>
+
+  <!-- Login Required Section its to Call to action for users to apply -->
+  <section class="login-required-section">
+      <div class="login-required-container">
+          <h2>Ready to Apply?</h2>
+          <p>Log in to your account to start your exchange program application.</p>
+          <p>Don't have an account yet? Sign up to get started!</p>
+          
+          <!-- linking to login page -->
+          <a href="login.html#loginBox" class="btn login-required-btn">Go to Login</a>
+      </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now — Exchange Program</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <!-- Logo with link to home page -->
+            <div class="logo">
+                <a href="index.html"><img src="pictures/logo.png" alt="Logo"></a>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                 <li><a href="index.html">Home</a></li>
+                <li><a href="campuses.html">Campuses</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="request-info.html" class="active">Request Info</a></li>
+                <li><a href="apply.html" class="btn">Apply Now</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+     
+    <br><br><br><br><br><br>
+
+<!--  Application page introduction -->
+<section class="apply-hero">
+    <h1>Start Your Exchange Application</h1>
+    <p>Complete the form below to apply for student mobility opportunities worldwide.</p>
+</section>
+
+<!-- Application Steps Tracker it's to Shows user progress through the form -->
+<section class="apply-steps">
+    
+    <div class="step active">1. Personal Info</div>
+   
+    <div class="step">2. Academic Details</div>
+    
+    <div class="step">3. Program Selection</div>
+    
+    <div class="step">4. Upload Documents</div>
+    
+    <div class="step">5. Submit</div>
+</section>
+
+<!-- Main Application Form -->
+<section class="apply-form-container">
+    <form class="apply-form">
+
+        
+        <div class="form-section">
+            <h2>Personal Information</h2>
+            <p style="color: #9fb0b6; margin-bottom: 20px;">Tell us about yourself</p>
+
+            <div class="form-grid">
+                
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+
+                 
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="example@mail.com" required>
+                </div>
+
+                
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="text" placeholder="+968 0000 0000" required>
+                </div>
+
+                
+                <div class="form-group">
+                    <label>Date of Birth</label>
+                    <input type="date" required>
+                </div>
+            </div>
+        </div>
+
+      
+        <div class="form-section">
+            <h2>Academic Details</h2>
+            <p style="color: #9fb0b6; margin-bottom: 20px;">Tell us about your studies</p>
+
+            <div class="form-grid">
+                 
+                <div class="form-group">
+                    <label>Current School / University</label>
+                    <input type="text" placeholder="Example: Sultan Qaboos University (SQU)" required>
+                </div>
+
+                 
+                <div class="form-group">
+                    <label>Major / Field of Study</label>
+                    <input type="text" placeholder="Example: Computer Science" required>
+                </div>
+
+                
+                <div class="form-group">
+                    <label>GPA / Grade</label>
+                    <input type="text" placeholder="Example: 3.2" required>
+                </div>
+
+                
+                <div class="form-group">
+                    <label>Expected Graduation Year</label>
+                    <input type="number" min="2024" max="2035" placeholder="2027">
+                </div>
+            </div>
+        </div>
+ 
+        <div class="form-section">
+            <h2>Program Selection</h2>
+            <p style="color: #9fb0b6; margin-bottom: 20px;">Choose your exchange preferences</p>
+
+           
+            <div class="form-group">
+                <label>Preferred Destination</label>
+                <select required>
+                    <option>Any Country</option>
+                    <option>Arab Countries</option>
+                    <option>Europe</option>
+                    <option>Africa</option>
+                    <option>Asia</option>
+                    <option>America</option>
+                </select>
+            </div>
+
+            
+            <div class="form-group">
+                <label>Interested Programs</label>
+                <select required>
+                    <option>Exchange Semester</option>
+                    <option>Full Academic Year</option>
+                    <option>Short Study Program</option>
+                    <option>Language Course</option>
+                </select>
+            </div>
+ 
+            <div class="form-group">
+                <label>Start Date Preference</label>
+                <select required>
+                    <option>Any Time</option>
+                    <option>Fall Semester</option>
+                    <option>Spring Semester</option>
+                    <option>Summer Term</option>
+                </select>
+            </div>
+        </div>
+
+         
+        <div class="form-section">
+            <h2>Upload Documents</h2>
+            <p style="color: #9fb0b6; margin-bottom: 20px;">Please provide the required documents</p>
+
+          
+            <div class="upload-box">
+                <p>Upload Your Transcript (PDF)</p>
+                <input type="file" accept="application/pdf" required>
+            </div>
+
+           
+            <div class="upload-box">
+                <p>Upload Passport Copy (PDF / JPG)</p>
+                <input type="file" accept="application/pdf, image/*" required>
+            </div>
+        </div>
+
+       
+        <div class="submit-box">
+            <!-- Submit button to send the application -->
+            <button type="submit" class="btn submit-btn">Submit Application</button>
+            <!-- Message about response time -->
+            <p class="submit-message">We will contact you within 3 to 5 days.</p>
+        </div>
+
+    </form>
+</section>
+
+<!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+           
+            <p style="text-align: center;">&copy; 2024 EYR Exchange Network. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

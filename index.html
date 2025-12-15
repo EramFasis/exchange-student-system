@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Student Exchange System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <!-- Logo with link to home -->
+            <div class="logo">
+                <a href="#"><img src="pictures/logo.png" alt="Logo"></a>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                 <li><a href="index.html">Home</a></li>
+                <li><a href="campuses.html">Campuses</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="request-info.html" class="active">Request Info</a></li>
+                <li><a href="apply.html" class="btn">Apply Now</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- Welcome Section with background image -->
+    <section class="hero" style="background-image: url('img/hero.jpg');">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Explore Student Exchange Opportunities</h1>
+            <p>Study in top universities across multiple regions and expand your experience.</p>
+        <br> <br>
+            <a href="campuses.html" class="btn hero-btn">Start Exploring</a>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="explore">
+    <h2>Find Your Exchange Program</h2>
+
+   
+
+    <!-- Form to search for exchange programs -->
+    <form action="#" method="post" class="explore-form">
+
+        <!-- Select current school -->
+        <div class="form-box">
+            <label>What is your current school?</label>
+            <select required>
+                <option value="" disabled selected>Select One</option>
+                <option value="0">Not Listed</option>
+                <option value="1">Harvard University</option>
+                <option value="2">Stanford University</option>
+                <option value="3">MIT</option>
+                <option value="4">Oxford University</option>
+                <option value="5">Cambridge University</option>
+                <option value="6">University of Tokyo</option>
+                <option value="7">National University of Singapore</option>
+                <option value="8">University of Toronto</option>
+                <option value="9">ETH Zurich</option>
+                <option value="10">University of Sydney</option>
+                <option value="11">Sorbonne University</option>
+                <option value="12">University of Munich</option>
+                <option value="13">University of São Paulo</option>
+                <option value="14">University of Hong Kong</option>
+                <option value="15">Seoul National University</option>
+                <option value="16">University of New South Wales</option>
+                <option value="17">Trinity College Dublin</option>
+                <option value="18">University of Amsterdam</option>
+                <option value="19">University of Toronto</option>
+                <option value="20">Peking University</option>
+                <option value="21">Sultan Qaboos University </option>
+            </select>
+        </div>
+
+        <!-- Select destination country/region -->
+        <div class="form-box">
+            <label>Where do you want to study?</label>
+            <select>
+                <option value="*">Anywhere</option>
+                <optgroup label="Middle East">
+                    <option value="AE">United Arab Emirates</option>
+                    <option value="IL">Israel</option>
+                    <option value="SA">Saudi Arabia</option>
+                    <option value="QA">Qatar</option>
+                    <option value="KW">Kuwait</option>
+                    <option value="BH">Bahrain</option>
+                    <option value="OM">Oman</option>
+                    <option value="JO">Jordan</option>
+                    <option value="LB">Lebanon</option>
+                    <option value="TR">Turkey</option>
+                </optgroup>
+                <optgroup label="North America">
+                    <option value="CA">Canada</option>
+                    <option value="US">United States</option>
+                </optgroup>
+                <optgroup label="Latin America">
+                    <option value="MX">Mexico</option>
+                    <option value="BR">Brazil</option>
+                    <option value="AR">Argentina</option>
+                </optgroup>
+                <optgroup label="Europe">
+                    <option value="UK">United Kingdom</option>
+                    <option value="FR">France</option>
+                    <option value="DE">Germany</option>
+                    <option value="IT">Italy</option>
+                </optgroup>
+                <optgroup label="Oceania">
+                    <option value="AU">Australia</option>
+                    <option value="NZ">New Zealand</option>
+                </optgroup>
+                <optgroup label="Asia">
+                    <option value="JP">Japan</option>
+                    <option value="CN">China</option>
+                    <option value="KR">South Korea</option>
+            </select>
+        </div>
+
+        <!-- Select when to study abroad -->
+        <div class="form-box">
+            <label>When do you want to go?</label>
+            <select>
+                <option value="*">Any Time</option>
+                <option value="Fall">Fall 2025</option>
+                <option value="Spring">Spring 2026</option>
+                <option value="Year">Full Academic Year</option>
+            </select>
+        </div>
+
+        <!-- Select field of study -->
+        <div class="form-box">
+            <label>What do you want to study?</label>
+            <select>
+                <option value="*">Any Field</option>
+                <option>Computer Science</option>
+                <option>Engineering</option>
+                <option>Business</option>
+                <option>Medicine</option>
+                <option>Arts & Humanities</option>
+                <option>Sciences</option>
+                <option>Sciences</option>
+                <option>Law</option>
+                <option>Economics</option>
+                <option>Psychology</option>
+                
+            </select>
+        </div>
+
+        <!-- Submit search button -->
+        <button type="submit" class="btn submit-btn">Search</button>
+    </form>
+
+    <!-- Link to interactive map finder -->
+    <div style="text-align:center; margin-top:25px;">
+    <a href="map-finder.html" class="map-btn">Find Programs Near Me</a>
+</div>
+
+</section>
+
+<!-- Student Testimonials Carousel Section -->
+<section class="testimonials">
+    <h2>What Students Say</h2>
+    <div id="carousel">
+        <div id="slides">
+           
+            <ul>
+                <!-- Slide 1 -->
+                <li class="slide active">
+                    <p class="quote">
+                        "The exchange program changed my life! I learned so much about myself and met amazing people."
+                        <span class="author">— NICOLE</span>
+                    </p>
+                </li>
+
+                <!-- Slide 2 -->
+                <li class="slide">
+                    <p class="quote">
+                        "Being in a new environment helped me grow more than I expected. Best experience ever!"
+                        <span class="author">— AMANDA</span>
+                    </p>
+                </li>
+
+                <!-- Slide 3 -->
+                <li class="slide">
+                    <p class="quote">
+                        "It gave me independence and confidence. I wish I could do another year!"
+                        <span class="author">— ALEX</span>
+                    </p>
+                </li>
+
+                <!-- Slide 4 -->
+                <li class="slide">
+                    <p class="quote">
+                        "I met incredible people, studied new things, and explored a new culture. Highly recommended."
+                        <span class="author">— MARIA</span>
+                    </p>
+                </li>
+
+                <!-- Slide 5 -->
+                <li class="slide">
+                    <p class="quote">
+                        "Take the chance. Go somewhere new. It will open your eyes to so many perspectives."
+                        <span class="author">— LUKA</span>
+                    </p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Carousel navigation buttons -->
+        <div class="btn-bar">
+            <button id="prev" class="carousel-btn">❮</button>
+            <button id="next" class="carousel-btn">❯</button>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-column">
+            <h3>EYR</h3>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </div>
+
+       
+        <div class="footer-column">
+            <h3>community</h3>
+            <a href="#">Member Institutions</a>
+            <a href="#">Council</a>
+            <a href="#">Staff</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>involvement</h3>
+            <a href="#">Membership</a>
+            <a href="#">Donate</a>
+            <a href="#">Conference</a>
+        </div>
+
+        <!-- Connect column with social media -->
+        <div class="footer-column">
+            <h3>connect</h3>
+
+            <!-- Social media icons -->
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+
+            <!-- Contact information -->
+            <p class="footer-contact">+968 91277167</p>
+            <p class="footer-contact">info@eyr.org</p>
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- JavaScript for carousel and authentication toggle -->
+<script>
+// Get all testimonial slides
+const slides = document.querySelectorAll('.slide');
+let currentIndex = 0;
+
+// Function to display a specific slide
+function showSlide(n) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[n].classList.add('active');
+}
+
+// Next button (to move to next slide)
+document.getElementById('next').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+});
+
+// Previos button (to move to previous slide)
+document.getElementById('prev').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+});
+
+// Show firrst slide on page load
+showSlide(0);
+
+// Toggle bettween login and sign up forms
+function toggleSignup(event) {
+    event.preventDefault();
+    document.getElementById('loginBox').classList.toggle('hidden');
+    document.getElementById('signupBox').classList.toggle('hidden');
+}
+</script>
+
+
+</body>
+</html>

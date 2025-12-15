@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Campuses (Student Exchange)</title>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- Load Leaflet map library CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="main.css" />
+
+  <style>
+    /* Custom styles for this page layout */
+    .page {
+      max-width: 1200px;
+      margin: 28px auto;
+      padding: 20px;
+    }
+
+    /* Top navigation bar with search and filters */
+    .top-bar {
+      display:flex;
+      gap:16px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+
+    /* Filter controls container */
+    .filters {
+      display:flex;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    /* Dropdown filter styling */
+    .filter-select {
+      background: rgba(255,255,255,0.02);
+      color: var(--text, #e7e7e7);
+      border: 1px solid rgba(255,255,255,0.04);
+      padding: 10px 12px;
+      border-radius: 8px;
+      min-width: 160px;
+    }
+
+    /* Grid layout for university cards */
+    .cards-grid {
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    /* Individual university card styling */
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid rgba(0,246,255,0.06);
+      padding: 12px;
+      border-radius: 12px;
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      transition: transform .18s, box-shadow .18s;
+      cursor:pointer;
+    }
+
+    /* Hover effect when mouse is over a card */
+    .card:hover { transform: translateY(-6px); box-shadow: 0 12px 28px rgba(0,246,255,0.04); }
+    
+    /* University logo image styling */
+    .card img.logo { width:64px; height:64px; border-radius:8px; object-fit:cover; background:#111; }
+
+    /* Card title and text styling */
+    .card h4 { margin:0 0 6px 0; color: var(--accent-color, #00f6ff); font-size: 16px; }
+    .card p { margin:0; color: #cfd6d9; font-size: 14px; }
+
+    /* Program information text */
+    .card .meta { font-size:13px; color:#9fb0b6; margin-top:6px; }
+
+    /* Highlight style for selected card */
+    .card.highlight {
+      border-color: var(--accent-color, #00f6ff);
+      box-shadow: 0 8px 30px rgba(0,246,255,0.08);
+      transform: translateY(-6px) scale(1.01);
+    }
+
+    /* Featured universities horizontal scroll section */
+    .featured {
+      display:flex;
+      gap:12px;
+      overflow:auto;
+      margin: 18px 0;
+    }
+    
+    /* Individual featured university item */
+    .featured .feat {
+      min-width: 220px;
+      padding:12px;
+      border-radius:10px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid rgba(0,246,255,0.04);
+    }
+    
+    /* Map container styling */
+    .map-column {
+      margin-top: 18px;
+    }
+
+    /* Responsive design for tablets */
+    @media (max-width: 1000px) {
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    
+    /* Responsive design for mobile devices */
+    @media (max-width: 720px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      .top-bar { flex-direction:column; align-items:flex-start; gap:10px; }
+      #map { height: 48vh; }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <!-- Logo with link to home page -->
+      <div class="logo">
+        <a href="index.html"><img src="pictures/logo.png" alt="Logo"></a>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="campuses.html">Campuses</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="request-info.html" class="active">Request Info</a></li>
+        <li><a href="apply.html" class="btn">Apply Now</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+
+    
+    </nav>
+  </header>
+
+   
+  <br><br><br><br><br><br>
+
+  <div class="page">
+    <!-- Page title and description -->
+    <header style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <div>
+        <h1 style="margin:0;color:var(--accent-color)">Partner Campuses</h1>
+        <p style="margin:6px 0 0 0;color:#9fb0b6">Browse partner universities, filter by region or program, and click to view details.</p>
+      </div>
+    </header>
+
+    <!-- Search and filter controls -->
+    <div class="top-bar">
+      <div class="filters" role="group" aria-label="campus filters">
+        <!-- Search box to find universities -->
+        <input id="searchBox" type="search" placeholder="Search university or program..." style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);min-width:280px;background:rgba(255,255,255,0.02);color:var(--text,#e7e7e7)">
+
+        <!-- Dropdown to filter by region/continent -->
+        <select id="regionFilter" class="filter-select" aria-label="Filter by region">
+          <option value="all">All Regions</option>
+          <option value="arab">Arab Countries</option>
+          <option value="europe">Europe</option>
+          <option value="africa">Africa</option>
+          <option value="asia">Asia</option>
+          <option value="america">America</option>
+          <option value="australia">Australia</option>
+        </select>
+
+        <!-- Dropdown to filter by study program -->
+        <select id="programFilter" class="filter-select" aria-label="Filter by program">
+          <option value="all">All Programs</option>
+          <option value="engineering">Engineering</option>
+          <option value="business">Business</option>
+          <option value="cs">Computer Science</option>
+          <option value="medicine">Medicine</option>
+          <option value="arts">Arts & Humanities</option>
+          <option value="env">Environmental / Agriculture</option>
+        </select>
+      </div>
+
+      <!-- Quick zoom buttons to jump to different regions on the map -->
+      <div style="display:flex;gap:10px;align-items:center">
+        <button class="continent-btn" onclick="zoomTo('world')">World</button>
+        <button class="continent-btn" onclick="zoomTo('arab')">Arab</button>
+        <button class="continent-btn" onclick="zoomTo('europe')">Europe</button>
+        <button class="continent-btn" onclick="zoomTo('africa')">Africa</button>
+      </div>
+    </div>
+
+    <!-- Featured universities section (scrollable) -->
+    <div class="featured" id="featuredStrip">
+      <!-- will be added by JavaScript -->
+    </div>
+
+    <!-- Main content: cards on left, map on right -->
+    <div style="display:grid;grid-template-columns: 1fr 420px; gap:18px; align-items:start;">
+      <!-- University cards section -->
+      <div>
+        <div class="cards-grid" id="cardsGrid">
+          <!-- will be added by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Interactive map section -->
+      <div class="map-column">
+        <!-- Map container that will be filled by Leaflet -->
+        <div id="map" style="height: 66vh; border-radius:12px;"></div>
+        <!-- Help text below the map -->
+        <div style="margin-top:12px; text-align:center; color:#9fb0b6; font-size:14px;">
+          Click a marker or card to view programs.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Load Leaflet map JavaScript library -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+  <!-- external JavaScript file with all campus functionality -->
+  <script src="campuses.js"></script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      
+      <p style="text-align: center;">&copy; 2024 EYR Exchange Network. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
