@@ -27,7 +27,7 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-bottom: 30px;
-            text-color: #232b32;
+            
         }
 
         /* individual statistic card */
@@ -200,25 +200,25 @@
         <div class="stats-grid"  >
             <div class="stat-card">
                 <div class="stat-number" id="total-apps">0</div>
-                <div>Total Applications</div>
+                <div style="color: #495057;">Total Applications</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number" id="pending-apps">0</div>
-                <div>Pending Review</div>
+                <div style="color: #495057;">Pending Review</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number" id="approved-apps">0</div>
-                <div>Approved</div>
+                <div style="color: #495057;">Approved</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number" id="rejected-apps">0</div>
-                <div>Rejected</div>
+                <div style="color: #495057;">Rejected</div>
             </div>
         </div>
 
         <!-- applications list -->
         <div class="applications-list">
-            <div style="padding: 15px 20px; background: #f8f9fa; font-weight: bold; border-bottom: 1px solid #e9ecef;">
+            <div style="padding: 15px 20px; color: #495057;background: #f8f9fa; font-weight: bold; border-bottom: 1px solid #e9ecef;">
                 Recent Applications
             </div>
             <div id="applications-container">
@@ -227,7 +227,7 @@
         </div>
 
         <!-- detailed application view -->
-        <div class="application-detail" id="application-detail">
+        <div class="application-detail" id="application-detail" style="color: #232b32;">
             <!-- detail header -->
             <div class="detail-header">
                 <h2 id="detail-title">Application Details</h2>
@@ -235,7 +235,7 @@
             </div>
 
             <!-- application information grid -->
-            <div class="detail-grid">
+            <div class="detail-grid" >
                 <!-- student personal info -->
                 <div class="detail-section">
                     <h3>Student Information</h3>
@@ -444,8 +444,8 @@
             document.getElementById('start-date').textContent = currentApplication.startDate;
 
             // show eligibility information
-            document.getElementById('gpa-check').textContent = currentApplication.eligibility.gpaMet ? '✓ Met (3.0+)' : '✗ Below 3.0';
-            document.getElementById('docs-check').textContent = currentApplication.eligibility.docsComplete ? '✓ Complete' : '✗ Incomplete';
+            document.getElementById('gpa-check').textContent = currentApplication.eligibility.gpaMet ? 'Met (3.0+)' : 'Below 3.0';
+            document.getElementById('docs-check').textContent = currentApplication.eligibility.docsComplete ? 'Complete' : 'Incomplete';
             document.getElementById('eligibility-status').textContent = currentApplication.eligibility.overall;
 
             // list all submitted documents

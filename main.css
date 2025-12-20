@@ -1,7 +1,5 @@
-/* one file for all website */
+/* global styles */
 
-
-/* GLOBAL RESETS */
 * {
     margin: 0;
     padding: 0;
@@ -15,9 +13,8 @@ body {
     overflow-x: hidden;
 }
 
- 
-/* NAVBAR */
- 
+/* navbar */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -63,9 +60,8 @@ body {
     box-shadow: 0 0 15px #00f6ff;
 }
 
- 
-/* HERO SECTION */
- 
+/* hero section */
+
 .hero {
     height: 100vh;
     background-size: cover;
@@ -119,9 +115,8 @@ body {
     box-shadow: 0 0 20px #00f6ff;
 }
 
- 
-/* EXPLORE FORM SECTION */
- 
+/* explore form */
+
 .explore {
     padding: 80px 40px;
     text-align: center;
@@ -193,9 +188,8 @@ body {
     box-shadow: 0 0 15px #00f6ff;
 }
 
-/* =============================== */
-/* TESTIMONIALS */
-/* =============================== */
+/* testimonials */
+
 .testimonials {
     background: #0d0d14;
     padding: 80px 40px;
@@ -233,9 +227,9 @@ body {
     text-shadow: 0 0 12px #00f6ff;
 }
 
-/* =============================== */
-/* FOOTER */
-/* =============================== */
+
+/* footer */
+
 .footer {
     background: #0a0a0f;
     padding: 60px 40px;
@@ -282,7 +276,8 @@ body {
     margin-top: 6px;
 }
 
-/* RESPONSIVE */
+/* responsive */
+
 @media (max-width: 900px) {
     .explore-form { grid-template-columns: 1fr; }
     .footer-container { grid-template-columns: repeat(2, 1fr); }
@@ -292,7 +287,8 @@ body {
     .footer-container { grid-template-columns: 1fr; text-align: center; }
 }
 
-/* Map Section Styling */
+/* map styling */
+
 #map {
   height: 500px;
   width: 100%;
@@ -310,8 +306,8 @@ h2 {
   letter-spacing: 1px;
 }
 
+/* map markers */
 
-/* --- Custom Glowing Map Markers --- */
 .custom-marker {
   background: var(--accent-color);
   width: 14px;
@@ -321,14 +317,14 @@ h2 {
   border: 2px solid #fff;
 }
 
-/* Marker hover animation */
 .custom-marker:hover {
   transform: scale(1.3);
   transition: 0.25s ease-in-out;
   box-shadow: 0 0 18px var(--accent-color), 0 0 28px var(--accent-color);
 }
 
-/* --- Popup Window Styling --- */
+/* popup styling */
+
 .leaflet-popup-content-wrapper {
   background: rgba(20,20,25,0.95);
   color: #fff;
@@ -357,7 +353,8 @@ h2 {
   margin-bottom: 6px;
 }
 
-/* --- Map Container Glow Upgrade --- */
+/* map glow */
+
 #map {
   animation: mapGlow 4s infinite alternate;
 }
@@ -368,7 +365,8 @@ h2 {
 }
 
 
-/* --- Pulsing Marker Animation --- */
+/* pulsing marker */
+
 .pulse-marker {
   width: 16px;
   height: 16px;
@@ -395,7 +393,8 @@ h2 {
   100% { opacity: 0; }
 }
 
-/* --- Search Bar Styling --- */
+/* search bar */
+
 #uniSearchBar {
   width: 100%;
   padding: 12px 15px;
@@ -413,7 +412,8 @@ h2 {
   box-shadow: 0 0 10px var(--accent-color);
 }
 
-/* --- Continent Buttons --- */
+/* continent buttons */
+
 #continentButtons {
   margin-top: 25px;
   text-align: center;
@@ -440,7 +440,8 @@ h2 {
   box-shadow: 0 0 15px var(--accent-color);
 }
 
-/* --- Custom Uni Icon Marker --- */
+/* university marker */
+
 .uni-logo-marker {
   width: 30px;
   height: 30px;
@@ -451,13 +452,8 @@ h2 {
   background-position: center;
 }
 
+/* small hero */
 
-/* ====================================================== */
-/* REQUEST INFO PAGE — FORM, FAQ, CONTACT, DOWNLOADS      */
-/* Dark + Neon Aqua Theme (matches your existing design)  */
-/* ====================================================== */
-
-/* --- Small Hero Banner --- */
 .small-hero {
     height: 45vh;
     background: url('img/request-bg.jpg') center/cover no-repeat;
@@ -529,9 +525,7 @@ h2 {
 
 
 
-/* ====================================================== */
-/* QUICK CONTACT CARDS                                     */
-/* ====================================================== */
+/* contact cards */
 
 .quick-contact-grid {
     display: grid;
@@ -565,9 +559,7 @@ h2 {
 
 
 
-/* ====================================================== */
-/* DOWNLOAD CENTER BOXES                                   */
-/* ====================================================== */
+/* downdload center */
 
 .download-grid {
     display: grid;
@@ -598,9 +590,7 @@ h2 {
 
 
 
-/* ====================================================== */
-/* FAQ SECTION                                             */
-/* ====================================================== */
+/* Faq */
 
 .faq-grid {
     display: grid;
@@ -638,9 +628,7 @@ h2 {
 
 
 
-/* ====================================================== */
-/* RESPONSIVE BEHAVIOR                                     */
-/* ====================================================== */
+/* responsive  */
 
 @media (max-width: 900px) {
     .request-info-form {
@@ -668,9 +656,7 @@ h2 {
 }
 
 
-/* ---------------------------------------------
-   APPLY PAGE – HERO
-------------------------------------------------*/
+/* applay page*/
 .apply-hero {
     background: linear-gradient(135deg, #5b2fd4, #0f0f16);
     padding: 90px 20px;
@@ -688,9 +674,7 @@ h2 {
     opacity: 0.85;
 }
 
-/* ---------------------------------------------
-   STEPS
-------------------------------------------------*/
+/* steps*/
 .apply-steps {
     display: flex;
     justify-content: center;
@@ -716,9 +700,7 @@ h2 {
     transform: translateY(-3px);
 }
 
-/* ---------------------------------------------
-   FORM LAYOUT
-------------------------------------------------*/
+/* form layout */
 .apply-form-container {
     width: 90%;
     max-width: 1000px;
@@ -750,9 +732,7 @@ h2 {
     margin-bottom: 25px;
 }
 
-/* ---------------------------------------------
-   FORM INPUTS
-------------------------------------------------*/
+/* form group styling */
 .form-group label {
     color: #d0cfff;
     margin-bottom: 6px;
@@ -776,9 +756,7 @@ h2 {
     box-shadow: 0 0 10px rgba(102, 51, 255, 0.3);
 }
 
-/* ---------------------------------------------
-   UPLOAD BOXES
-------------------------------------------------*/
+/* upload box */
 .upload-box {
     background: #1b1b25;
     border: 2px dashed #6633ff;
@@ -793,9 +771,7 @@ h2 {
     margin-top: 10px;
 }
 
-/* ---------------------------------------------
-   SUBMIT
-------------------------------------------------*/
+/* submit*/
 .submit-box {
     text-align: center;
     margin-top: 30px;
@@ -823,9 +799,7 @@ h2 {
     font-size: 0.9rem;
 }
 
-/* ---------------------------------------------
-   RESPONSIVE
-------------------------------------------------*/
+
 @media (max-width: 700px) {
     .apply-hero h1 {
         font-size: 2.3rem;
@@ -837,9 +811,7 @@ h2 {
 }
 
 
-/* ================================
-   HOW IT WORKS – HERO
-================================ */
+
 .hiw-hero {
     padding: 80px 20px;
     text-align: center;
@@ -855,9 +827,7 @@ h2 {
     opacity: 0.85;
 }
 
-/* ================================
-   THREE MAIN STEPS
-================================ */
+/* how it works step */
 .hiw-steps {
     display: flex;
     gap: 20px;
@@ -886,9 +856,7 @@ h2 {
     color: #6633ff;
 }
 
-/* ================================
-   TIMELINE
-================================ */
+/* timeline */
 .hiw-timeline {
     max-width: 800px;
     margin: 50px auto;
@@ -917,9 +885,7 @@ h2 {
     top: 20px;
 }
 
-/* ================================
-   FAQ SECTION
-================================ */
+/* FAQ section */
 .hiw-faq {
     max-width: 900px;
     margin: 60px auto;
@@ -946,7 +912,7 @@ h2 {
 
 
 
-/* LOGO STYLING */
+/* logo */
 .logo img {
     height: 80px;
     width: 80px;
@@ -957,9 +923,7 @@ h2 {
     transition: 0.3s;
 }
 
-/* =============================== */
-/* SLIDESHOW STYLING FOR HERO SECTION */
-/* =============================== */
+/* slideshow styling */
 #slides {
     position: relative;
     max-width: 100%;
@@ -983,18 +947,18 @@ h2 {
     display: block;
 }
 
-/* Add any additional custom styles for the slideshow here */
 
-/* --- Additional Slideshow Button Styles --- */
+
+/* Additional Slideshow Button Styles */
 .carousel-btn {
     padding: 10px 15px;
     margin: 10px 5px;
     cursor: pointer;
 }
 
-/* =============================== */
-/* AUTH SECTION STYLING            */
-/* =============================== */
+
+/* auther setion styleing         */
+
 
 /* Role selection section */
 .role-selection {
